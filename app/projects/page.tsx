@@ -92,7 +92,7 @@ export default function Projects() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center text-gray-600 mb-12"
           >
-            Here is some of my work that I've done in various programming languages.
+            Here is some of my work that I&apos;ve done in various programming languages.
           </motion.p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
