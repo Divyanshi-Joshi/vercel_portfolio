@@ -32,7 +32,7 @@ export default function Home() {
           >
             Hi,
             <br />
-            I'm <span className="text-pink-500">Divyanshi Joshi</span>
+            I&apos;m <span className="text-pink-500">Divyanshi Joshi</span>
           </motion.h1>
           <motion.h2
             initial={{ y: -30, opacity: 0 }}
