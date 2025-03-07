@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #ed64a6;
+  --color-tertiary: #ffdab9;
+  --color-mint: #d8ebeb;
+  --color-light-green: #c8eca4;
+  --color-foreground: #000000;
+  --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
+  --border-radius: 14px;
+}
+
+body {
+  @apply bg-white text-black font-sans;
+}
+
+/* Navigation Icons */
+.nav-icon {
+  @apply relative transition-all duration-300 ease-in-out;
+}
+
+.nav-icon .label {
+  @apply absolute right-full top-1/2 -translate-y-1/2 whitespace-nowrap bg-gray-800 text-white py-1 px-3 rounded-lg mr-2 opacity-0 transition-all duration-300 ease-in-out pointer-events-none;
+}
+
+.nav-icon:hover .label {
+  @apply opacity-100 right-[120%];
+}
+
+/* Achievement Cards */
+.achievement-card img {
+  @apply filter grayscale transition-all duration-300 ease-in-out;
+}
+
+.achievement-card:hover img {
+  @apply filter-none scale-105;
+}
+
+/* Social Links */
+.social-link {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.social-link:hover {
+  @apply -translate-y-1;
+}
+
+/* Background Elements */
+.bg-mint {
+  background-color: var(--color-mint);
+}
+
+.bg-light-green {
+  background-color: var(--color-light-green);
+}
+
+.bg-peach {
+  background-color: var(--color-tertiary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+/* Custom Shapes */
+.shape-circle-top-left {
+  clip-path: circle(36.5% at 0 2%);
+}
+
+.shape-circle-bottom-right {
+  clip-path: circle(36.5% at 100% 100%);
+}
+
+.shape-triangle-top-left {
+  clip-path: polygon(0 0, 0 29%, 34% 0);
+}
+
+.shape-semi-circle-top-left {
+  clip-path: circle(30.5% at 0 0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-grid,
+  .achievements-grid,
+  .participations-grid {
+    @apply grid-cols-1;
+  }
+}
+
