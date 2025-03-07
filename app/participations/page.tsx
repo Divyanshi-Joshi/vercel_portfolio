@@ -11,7 +11,7 @@ const participations = [
     description:
       "Attended a 3-week long bootcamp as part of the Women Engineers Program wherein I enhanced my technical as well as corporate skills.",
     image:
-      "/images/We.jpg",
+      "/images/WE.jpg",
   },
   {
     id: 2,
