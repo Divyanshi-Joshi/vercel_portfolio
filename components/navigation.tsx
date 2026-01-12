@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Home, Settings, Trophy, Calendar, Contact } from "lucide-react"
+import { Home, Settings, Trophy, Calendar, Contact, Briefcase } from "lucide-react"
 
 interface NavigationProps {
-  activeIcon: "home" | "settings" | "trophy" | "calendar" | "contact"
+  activeIcon: "home" | "settings" | "trophy" | "calendar" | "briefcase" | "contact"
 }
 
 export default function Navigation({ activeIcon }: NavigationProps) {
@@ -18,6 +18,13 @@ export default function Navigation({ activeIcon }: NavigationProps) {
       label: "Home",
       href: "/",
       color: activeIcon === "home" ? "bg-secondary" : "bg-gray-700",
+    },
+    {
+      name: "briefcase",
+      icon: Briefcase,
+      label: "Internships",
+      href: "/internships",
+      color: activeIcon === "briefcase" ? "bg-secondary" : "bg-gray-700",
     },
     {
       name: "settings",

@@ -6,6 +6,14 @@ import ProjectCard from "@/components/project-card"
 
 const projects = [
   {
+    title: "NER using Agentic AI",
+    image: "/images/NER.png",
+    description:
+      "An Intelligent Multi-Agent NER (Named Entity Recognition) Framework that uses LLMs orchestrated via LangGraph to achieve SOTA zero-shot entity extraction",
+    github: "https://github.com/Divyanshi-Joshi/NER-using-Agentic-AI",
+  },
+
+  {
     title: "Duckling Game",
     image: "/images/duckling.png",
     description:
@@ -66,7 +74,28 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen relative overflow-hidden">
+      {/* Background with decorative shapes */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Base white background */}
+        <div className="absolute inset-0 bg-white"></div>
+        
+        {/* Top-left half circle - Mint Green */}
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-200 rounded-full opacity-60"></div>
+        
+        {/* Bottom-right half circle - Light Green */}
+        <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-emerald-200 rounded-full opacity-55"></div>
+        
+        {/* Top-right corner shape - Pink */}
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-pink-200 rounded-full opacity-40"></div>
+        
+        {/* Left side accent - Peach */}
+        <div className="absolute top-1/2 -left-32 w-64 h-64 bg-orange-100 rounded-full opacity-50"></div>
+        
+        {/* Bottom-left accent - Blue */}
+        <div className="absolute -bottom-20 left-1/4 w-72 h-72 bg-blue-100 rounded-full opacity-45"></div>
+      </div>
+
       {/* Navigation */}
       <Navigation activeIcon="settings" />
 
@@ -106,6 +135,26 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
+
+          {/* GitHub Link Section */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 * (projects.length + 3) }}
+            className="mt-16 text-center"
+          >
+            <p className="text-lg text-gray-600 mb-4">
+              For more projects, check out my GitHub{" "}
+              <a
+                href="https://github.com/Divyanshi-Joshi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 font-semibold hover:text-pink-600 transition-colors duration-300 underline"
+              >
+                HERE!
+              </a>
+            </p>
+          </motion.div>
         </div>
       </motion.div>
     </main>

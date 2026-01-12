@@ -55,16 +55,26 @@ const achievements = [
 export default function Achievements() {
   return (
     <main className="min-h-screen relative overflow-hidden">
-      {/* Background with light mint gradient */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="absolute inset-0 z-0"
-      >
-        <div className="h-full w-full bg-gradient-to-br from-mint to-white"></div>
-        <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-light-green shape-triangle-top-left"></div>
-      </motion.div>
+      {/* Background with decorative shapes */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Base white background */}
+        <div className="absolute inset-0 bg-white"></div>
+        
+        {/* Top-left half circle - Mint Green */}
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-200 rounded-full opacity-60"></div>
+        
+        {/* Bottom-right half circle - Light Green */}
+        <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-emerald-200 rounded-full opacity-55"></div>
+        
+        {/* Top-right corner shape - Pink */}
+        <div className="absolute -top-20 -right-20 w-80 h-80 bg-pink-200 rounded-full opacity-40"></div>
+        
+        {/* Left side accent - Peach */}
+        <div className="absolute top-1/2 -left-32 w-64 h-64 bg-orange-100 rounded-full opacity-50"></div>
+        
+        {/* Bottom-left accent - Blue */}
+        <div className="absolute -bottom-20 left-1/4 w-72 h-72 bg-blue-100 rounded-full opacity-45"></div>
+      </div>
 
       {/* Navigation */}
       <Navigation activeIcon="trophy" />

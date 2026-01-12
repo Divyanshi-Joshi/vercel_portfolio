@@ -8,6 +8,18 @@ import { motion } from "framer-motion"
 export default function Contact() {
   return (
     <main className="min-h-screen relative overflow-hidden">
+      {/* Background with decorative shapes */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Base white background */}
+        <div className="absolute inset-0 bg-white"></div>
+        
+        {/* Top-left half circle - Mint Green */}
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-200 rounded-full opacity-60"></div>
+        
+        {/* Bottom-right half circle - Light Green */}
+        <div className="absolute -bottom-48 -right-48 w-96 h-96 bg-emerald-200 rounded-full opacity-55"></div>
+      </div>
+
       {/* Navigation */}
       <Navigation activeIcon="contact" />
 
