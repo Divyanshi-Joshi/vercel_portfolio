@@ -37,7 +37,7 @@ const internships = [
       "Applied PCA and feature selection to reduce to 24 critical features",
       "RNN and CNN architecture implementation",
     ],
-    image: "/images/isro.png",
+    image: "/images/ISRO.png",
     isOngoing: false,
   },
 ]
@@ -284,3 +284,4 @@ export default function Internships() {
     </main>
   )
 }
+
