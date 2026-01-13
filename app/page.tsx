@@ -6,11 +6,33 @@ import SocialButton from "@/components/social-button"
 import { motion } from "framer-motion"
 
 export default function Home() {
+  const tagline = "Building Intelligent Systems through Code & AI";
+
+  // Animation variants for the container (staggers the letters)
+  const sentenceVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.4,
+        staggerChildren: 0.05, // Adjust this for typing speed
+      },
+    },
+  };
+
+  // Animation variants for each individual letter
+  const letterVariants = {
+    hidden: { opacity: 0, display: "none" },
+    visible: {
+      opacity: 1,
+      display: "inline-block",
+    },
+  };
+
   return (
     <main className="min-h-screen relative overflow-hidden">
       {/* Background with decorative shapes */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Base white background */}
         <div className="absolute inset-0 bg-white"></div>
         
         {/* Top-left half circle - Mint Green */}
@@ -49,38 +71,54 @@ export default function Home() {
             <br />
             I&apos;m <span className="text-pink-500">Divyanshi Joshi</span>
           </motion.h1>
+
+          {/* Typing Animation Tagline - Smaller Font Size */}
           <motion.h2
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-2xl md:text-4xl font-bold mb-6"
+            variants={sentenceVariants}
+            initial="hidden"
+            animate="visible"
+            className="text-xl md:text-3xl font-bold mb-6 min-h-[1.5em] flex items-center"
           >
-            AI ML Enthusiast
+            {tagline.split("").map((char, index) => (
+              <motion.span key={index} variants={letterVariants}>
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+            {/* Blinking Cursor */}
+            <motion.span
+              animate={{ opacity: [1, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+              className="inline-block w-[3px] h-[1em] bg-pink-500 ml-1"
+            />
           </motion.h2>
+
           <motion.p
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.6, delay: 1.5 }} // Delayed so it appears after typing
             className="text-base md:text-lg text-gray-600 mb-8"
           >
-            I am a third year Computer Science Student currently pursuing my B.Tech from Maharaja Agrasen Institute of
+            I am a final year Computer Science Student currently pursuing my B.Tech from Maharaja Agrasen Institute of
             Technology.
           </motion.p>
+
           <motion.div
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 1.7 }}
             className="flex flex-wrap gap-4"
           >
             <SocialButton label="LinkedIn" icon="in" href="https://www.linkedin.com/in/divyanshi-joshi-352a73256/" />
             <SocialButton label="GitHub" icon="github" href="https://github.com/Divyanshi-Joshi" />
           </motion.div>
         </motion.div>
+
+        {/* IMAGE SECTION: Added md:justify-end and md:pr-12 to shift right */}
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex-1 flex justify-center"
+          className="flex-1 flex justify-center md:justify-end md:pr-12"
         >
           <div className="relative w-64 h-64 md:w-96 md:h-96">
             <Image
