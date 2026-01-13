@@ -7,6 +7,14 @@ import { motion } from "framer-motion"
 const achievements = [
   {
     id: 1,
+    title: "International Business Conference",
+    description:
+      "Selected in the top 3% from over 3,000 applicants for the 51st International Business virtual conferenc organsied by Business TOday and Princeton Ubiversity",
+    image:
+      "/images/Conf.jpg",
+  },
+  {
+    id: 2,
     title: "ISRO ML Internship",
     description:
       "Selected as a Machine Learning Intern at Indian Research Space Organisation's Satish Dhawan Space Centre (SDSC SHAR), the spaceport of ISRO. Working under a senior scientist, I am researching solutions for mitigating space debris and collision risks with active satellites.",
@@ -14,7 +22,7 @@ const achievements = [
       "/images/ISRO.png",
   },
   {
-    id: 2,
+    id: 3,
     title: "TalentSprint Women Engineers Program",
     description:
       "Selected as one of the top 1% of scholars from over 22,000+ eligible applicants across the country for this program offered by TalentSprint, supported by Google",
@@ -22,7 +30,7 @@ const achievements = [
       "/images/talentsprint.png",
   },
   {
-    id: 3,
+    id: 4,
     title: "AWS AI ML Scholarship Program",
     description:
       "Selected as a recipient of the 2024 AWS AI & ML Scholarship! I am one of 1,000 students worldwide to receive a full scholarship for the Udacity AI Programming with Python Nanodegree program.",
@@ -30,21 +38,21 @@ const achievements = [
       "/images/AWS.jpg",
   },
   {
-    id: 4,
+    id: 5,
     title: "Research Head, GDSC MAIT",
     description:
       "Selected for the position of Research Head in Google Developers Student Club MAIT as part of the Core Team in our college. I managed written communications for a community of over 3,000+ followers and also helped in organizing and hosting various events",
     image: "/images/mait.png",
   },
   {
-    id: 5,
+    id: 6,
     title: "Coddess.Cafe Mentorship Program",
     description:
       "Selected as a mentee out of 800+ talented applicants who applied for this program which provides mentorship and guidance to aspiring women in STEM field.",
     image: "/images/codess.jpg",
   },
   {
-    id: 6,
+    id: 7,
     title: "Coordinator, TechXTract",
     description:
       "Selected as the Coordinator for this official society of the CST Department of our college wherein I help in coordinating various activities and events",
@@ -110,7 +118,7 @@ export default function Achievements() {
                     src={achievement.image || "/placeholder.svg"}
                     alt={achievement.title}
                     fill
-                    className="object-contain"
+                    className="object-cover"
                     priority
                   />
                 </div>

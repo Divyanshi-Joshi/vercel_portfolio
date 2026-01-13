@@ -7,6 +7,22 @@ import { motion } from "framer-motion"
 const participations = [
   {
     id: 1,
+    title: "RTC Member",
+    description:
+      "Currently a member of RTC. Participate in an international peer-to-peer network focusing on advancing women in technology through technical summits, career readiness workshops and corporate networking events.",
+    image:
+      "/images/RTC.png",
+  },
+  {
+    id: 2,
+    title: "Microsoft Code Without Barriers",
+    description:
+      "I successfully participated in the Microsoft Code without barriers mentorship program organised between April and June 2025",
+    image:
+      "/images/micro.jpg",
+  },
+  {
+    id: 3,
     title: "IIIT Hyderabad Bootcamp",
     description:
       "Attended a 3-week long bootcamp as part of the Women Engineers Program wherein I enhanced my technical as well as corporate skills.",
@@ -14,7 +30,7 @@ const participations = [
       "/images/WE.jpg",
   },
   {
-    id: 2,
+    id: 4,
     title: "Google Arcade Facilitator Program", 
     description:
       "Under this two month long program, I completed hands-on labs focused on GCP like Compute Engine, Kubernetes Engine, BigQuery, Firebase, etc. I also learnt to setup, manage and administer relational PostgreSQL, MySQL and SQL Server databases in cloud.",
@@ -22,7 +38,7 @@ const participations = [
       "/images/arcade.png",
   },
   {
-    id: 3,
+    id: 5,
     title: "Google Immersion Week",
     description:
       "Participated in a week-long immersion program, gaining exposure to various aspects of technology, teamwork and engaged in sessions on Intelligent Automation, AI for social good and Machine Learning, enhancing my understanding of the industry and its demands.",
@@ -30,35 +46,35 @@ const participations = [
       "/images/immersion.jpg",
   },
   {
-    id: 4,
+    id: 6,
     title: "IEEE MAIT Web3 & OpenSource",
     description:
       "Attended a hands on workshop on Web3 covering topics like Web3.0, decentralized identity, earning reputation through Open Source contributions, Fastn Framework project development, smart contract building, etc.",
     image: "/images/ieee.jpeg",
   },
   {
-    id: 5,
+    id: 7,
     title: "Smart India Hackathon (SIH)",
     description:
       "Participated in this hackathon wherein me and my team worked on developing an app to reduce the problems faced by farmers in agriculture",
     image: "/images/sih.webp",
   },
   {
-    id: 6,
+    id: 8,
     title: "Google Cloud Study Jam",
     description:
       "Worked on Labs on Google Cloud Computing Foundations and Generative AI and learnt the fundamental concepts & skills required to navigate and work within Google Cloud like networking and security.",
     image: "/images/jam.webp",
   },
   {
-    id: 7,
+    id: 9,
     title: "Google Devfest New Delhi",
     description:
       "This opportunity provided me with the privilege of connecting with fellow Tech Enthusiasts and exploring different technologies like Cybersecurity, Social Engineering, DevSecOps, LLMs using TensorFlow, Credential Management System, etc",
     image: "/images/devfest.jpg",
   },
   {
-    id: 8,
+    id: 10,
     title: "AI for India 2.0",
     description:
       "Successfully participated and completed the online course on AI & Machine Learning provided by Skill India in partnership with Guvi",
