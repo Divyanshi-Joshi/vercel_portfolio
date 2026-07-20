@@ -6,7 +6,7 @@ import SocialButton from "@/components/social-button"
 import { motion } from "framer-motion"
 
 export default function Home() {
-  const tagline = "Building Intelligent Systems through Code & AI";
+  const tagline = "Building AI that is explainable, reliable & impactful";
 
   // Animation variants for the container (staggers the letters)
   const sentenceVariants = {
@@ -98,8 +98,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 1.5 }} // Delayed so it appears after typing
             className="text-base md:text-lg text-gray-600 mb-8"
           >
-            I am a final year Computer Science Student currently pursuing my B.Tech from Maharaja Agrasen Institute of
-            Technology.
+            I am a Researcher and BTSA@ZS, recently graduated from Maharaja Agrasen Institute of Technology.
           </motion.p>
 
           <motion.div
