@@ -59,7 +59,7 @@ export default function Home() {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-1 mb-10 md:mb-0"
+          className="flex-1 mb-10 md:mb-0 w-full"
         >
           <motion.h1 
             initial={{ y: -30, opacity: 0 }}
@@ -77,7 +77,7 @@ export default function Home() {
             variants={sentenceVariants}
             initial="hidden"
             animate="visible"
-            className="text-xl md:text-3xl font-bold mb-6 min-h-[1.5em] flex items-center"
+            className="text-xl md:text-3xl font-bold mb-6 min-h-[1.5em] flex items-center flex-wrap"
           >
             {tagline.split("").map((char, index) => (
               <motion.span key={index} variants={letterVariants}>
@@ -92,24 +92,14 @@ export default function Home() {
             />
           </motion.h2>
 
-          <motion.p
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.5 }} // Delayed so it appears after typing
-            className="text-base md:text-lg text-gray-600 mb-8"
-          >
+          <p className="text-base md:text-lg text-gray-600 mb-8">
             I am a Researcher and BTSA@ZS, recently graduated from Maharaja Agrasen Institute of Technology.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ y: -30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.7 }}
-            className="flex flex-wrap gap-4"
-          >
+          <div className="flex flex-wrap gap-4">
             <SocialButton label="LinkedIn" icon="in" href="https://www.linkedin.com/in/divyanshi-joshi-352a73256/" />
             <SocialButton label="GitHub" icon="github" href="https://github.com/Divyanshi-Joshi" />
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* IMAGE SECTION: Added md:justify-end and md:pr-12 to shift right */}
