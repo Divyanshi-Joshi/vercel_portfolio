@@ -233,7 +233,7 @@ export default function Internships() {
 
                       {/* Highlights */}
                       <div className="space-y-2">
-                        {internship.highlights.map((highlight, idx) => (
+                        {(internship.highlights || []).map((highlight, idx) => (
                           <div
                             key={idx}
                             className="flex items-start gap-3 text-sm text-gray-700"
