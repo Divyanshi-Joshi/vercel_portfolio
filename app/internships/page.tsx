@@ -5,7 +5,20 @@ import Navigation from "@/components/navigation"
 import Image from "next/image"
 import { MapPin, Calendar, Star } from "lucide-react"
 
-const internships = [
+interface Internship {
+  id: number;
+  company: string;
+  position: string;
+  duration: string;
+  location: string;
+  description: string;
+  image: string;
+  isOngoing: boolean;
+  mentor?: string;
+  highlights?: string[];
+}
+
+const internships: Internship[] = [
   {
     id: 1,
     company: "ZS",

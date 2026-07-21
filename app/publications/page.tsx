@@ -2,9 +2,17 @@
 
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
-import { BookOpen, Calendar, Star } from "lucide-react"
+import { BookOpen } from "lucide-react"
 
-const publications = [
+interface Publication {
+  id: number;
+  title: string;
+  authors: string;
+  venue: string;
+  acceptanceRate?: string;
+}
+
+const publications: Publication[] = [
   {
     id: 1,
     title:
