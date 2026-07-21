@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
-import { BookOpen } from "lucide-react"
+import { BookOpen, Users, FileText, Award } from "lucide-react"
 
 interface Publication {
   id: number;
@@ -31,6 +31,21 @@ const publications: Publication[] = [
     venue: "Manuscript in preparation for journal submission",
   },
 ]
+
+const highlightName = (authors: string, name: string) => {
+  const parts = authors.split(new RegExp(`(${name})`, 'gi'));
+  return (
+    <span>
+      {parts.map((part, i) => 
+        part.toLowerCase() === name.toLowerCase() ? (
+          <span key={i} className="font-bold text-pink-600 bg-pink-50 px-1 rounded">{part}</span>
+        ) : (
+          part
+        )
+      )}
+    </span>
+  );
+};
 
 export default function Publications() {
   return (
@@ -72,37 +87,52 @@ export default function Publications() {
             Research contributions and manuscripts in progress
           </motion.p>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {publications.map((publication, index) => (
               <motion.div
                 key={publication.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.2 }}
-                className="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-100 hover:border-pink-200 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-pink-100 hover:border-pink-300 hover:shadow-[0_8px_30px_rgb(236,72,153,0.1)] transition-all duration-500 overflow-hidden"
               >
-                <div className="flex items-start gap-3 mb-4">
-                  <BookOpen className="w-6 h-6 text-pink-500 mt-1" />
-                  <h2 className="text-xl md:text-2xl font-semibold text-gray-900">
-                    {publication.title}
-                  </h2>
-                </div>
+                {/* Decorative background gradient that appears on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="p-3 bg-pink-100 rounded-xl text-pink-500 group-hover:scale-110 group-hover:bg-pink-500 group-hover:text-white transition-all duration-500 shrink-0 mt-1">
+                      <BookOpen className="w-6 h-6" />
+                    </div>
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">
+                      {publication.title}
+                    </h2>
+                  </div>
 
-                <div className="space-y-3 text-sm md:text-base text-gray-700">
-                  <p>
-                    <span className="font-semibold text-pink-600">Authors:</span>{" "}
-                    {publication.authors}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-pink-600">Venue:</span>{" "}
-                    {publication.venue}
-                  </p>
-                  {publication.acceptanceRate && (
-                    <p>
-                      <span className="font-semibold text-pink-600">Note:</span>{" "}
-                      {publication.acceptanceRate}
-                    </p>
-                  )}
+                  <div className="space-y-4 text-sm md:text-base text-gray-700 ml-2 md:ml-14">
+                    <div className="flex items-start gap-3">
+                      <Users className="w-5 h-5 text-pink-400 shrink-0 mt-0.5" />
+                      <p className="leading-relaxed">
+                        {highlightName(publication.authors, "Divyanshi Joshi")}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-start gap-3">
+                      <FileText className="w-5 h-5 text-pink-400 shrink-0 mt-0.5" />
+                      <p className="font-medium text-gray-800">
+                        {publication.venue}
+                      </p>
+                    </div>
+
+                    {publication.acceptanceRate && (
+                      <div className="flex items-start gap-3">
+                        <Award className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                        <span className="inline-flex items-center px-3 py-1 rounded-full bg-amber-50 text-amber-700 text-sm font-semibold border border-amber-200">
+                          {publication.acceptanceRate}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

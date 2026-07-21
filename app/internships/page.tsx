@@ -23,7 +23,7 @@ const internships: Internship[] = [
     id: 1,
     company: "ZS",
     position: "Business Technology Solutions Associate (BTSA)",
-    duration: "2025 - Present",
+    duration: "July 2026 - Present",
     location: "Gurugram, India",
     description:
       "Joined ZS as a full-time Business Technology Solutions Associate.",
