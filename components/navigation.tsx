@@ -69,15 +69,15 @@ export default function Navigation({ activeIcon }: NavigationProps) {
         <Link
           key={item.name}
           href={item.href}
-          className={`nav-icon ${item.color} text-white rounded-full transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.7)] relative flex items-center`}
+          className={`nav-icon ${item.color} text-white rounded-full transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.5)] hover:shadow-[0_8px_16px_rgba(0,0,0,0.7)] relative flex items-center justify-center`}
           onMouseEnter={() => setHoveredIcon(item.name)}
           onMouseLeave={() => setHoveredIcon(null)}
         >
-          <div className="p-3 md:p-4 flex items-center">
-            <item.icon className="w-4 h-4 md:w-5 md:h-5" />
+          <div className="p-3 md:p-4 flex items-center justify-center">
+            <item.icon className="w-4 h-4 md:w-5 md:h-5 shrink-0" />
             <span 
-              className={`overflow-hidden transition-all duration-300 ${
-                hoveredIcon === item.name ? 'w-auto ml-2 opacity-100' : 'w-0 opacity-0'
+              className={`overflow-hidden whitespace-nowrap transition-all duration-300 ease-in-out ${
+                hoveredIcon === item.name ? 'max-w-[200px] ml-2 opacity-100' : 'max-w-0 opacity-0'
               }`}
             >
               {item.label}
